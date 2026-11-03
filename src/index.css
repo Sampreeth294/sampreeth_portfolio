@@ -1,0 +1,30 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #171e2e;
+
+  background:
+    radial-gradient(
+      ellipse at 8% 35%,
+      #e6f6ff 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 100% 65%,
+      #fbeaff 0%,
+      transparent 45%
+    ),
+    #ffffff;
+}
