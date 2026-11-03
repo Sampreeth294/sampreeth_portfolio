@@ -1,43 +1,92 @@
-
-/* ==============================
+ 
+/* ========================================
    HERO SECTION
-============================== */
+======================================== */
 
 .hero {
-  min-height: 780px;
-  padding: 115px 24px 45px;
   position: relative;
+  min-height: 690px;
+  padding: 125px 24px 35px;
   overflow: hidden;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      ellipse at 8% 30%,
+      rgba(190, 231, 255, 0.42),
+      transparent 43%
+    ),
+    radial-gradient(
+      ellipse at 96% 72%,
+      rgba(247, 207, 255, 0.40),
+      transparent 42%
+    ),
+    #ffffff;
+}
+
+/* ========================================
+   MAIN TWO-COLUMN LAYOUT
+======================================== */
+
+.hero-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 45px;
+
   box-sizing: border-box;
 }
 
-/* ==============================
-   GREETING PILL
-============================== */
+/* ========================================
+   LEFT CONTENT
+======================================== */
 
-.hero-greeting {
+.hero-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+/* ========================================
+   GREETING PILL
+======================================== */
+
+.hero-content .hero-greeting {
   width: fit-content;
-  min-width: 90px;
-  margin: 0 auto 22px;
-  padding: 8px 18px;
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 8px 17px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
 
   background: #ffffff;
   border: 1px solid #edf0f7;
   border-radius: 50px;
-  box-shadow: 0 3px 8px rgba(30, 50, 90, 0.08);
 
+  box-shadow: 0 3px 9px rgba(30, 50, 90, 0.09);
   box-sizing: border-box;
 }
 
 .greeting-text {
   color: #536bff;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 700;
   animation: greetingFade 0.5s ease;
+}
+
+.greeting-wave {
+  display: inline-block;
+  font-size: 20px;
+  transform-origin: 70% 70%;
+  animation: waveHello 2.5s ease-in-out infinite;
 }
 
 @keyframes greetingFade {
@@ -52,91 +101,115 @@
   }
 }
 
-/* ==============================
-   TWO-COLUMN HERO LAYOUT
-============================== */
+@keyframes waveHello {
+  0%, 70%, 100% {
+    transform: rotate(0deg);
+  }
 
-.hero-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  75% {
+    transform: rotate(18deg);
+  }
 
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  align-items: center;
-  gap: 65px;
+  80% {
+    transform: rotate(-10deg);
+  }
 
-  box-sizing: border-box;
+  85% {
+    transform: rotate(18deg);
+  }
+
+  90% {
+    transform: rotate(0deg);
+  }
 }
 
-/* ==============================
-   INTRODUCTION
-============================== */
-
-.hero-content {
-  min-width: 0;
-  position: relative;
-  z-index: 1;
-}
+/* ========================================
+   NAME
+======================================== */
 
 .hero-content h1 {
-  margin: 0 0 12px;
-  color: #171e2e;
-  font-size: clamp(44px, 5vw, 64px);
+  margin: 0 0 14px;
+
+  color: #191f2e;
+  font-size: clamp(46px, 5vw, 64px);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -2px;
+
   overflow-wrap: break-word;
 }
+
+/* ========================================
+   PROFESSIONAL TITLE
+======================================== */
 
 .hero-content h2 {
   margin: 0 0 12px;
+
   color: #202b3e;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.45;
 }
+
+/* ========================================
+   LOCATION
+======================================== */
 
 .hero-location {
-  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0 0 22px;
+
   color: #64748b;
   font-size: 12px;
+  line-height: 1.5;
 }
 
-.hero-location span {
-  margin-right: 5px;
+.location-icon {
+  color: #8293ad;
+  font-size: 15px;
 }
+
+/* ========================================
+   INTRODUCTION
+======================================== */
 
 .hero-description {
-  max-width: 430px;
+  max-width: 410px;
   margin: 0;
+
   color: #475569;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.85;
+
   overflow-wrap: break-word;
 }
 
-/* ==============================
+/* ========================================
    AVAILABILITY BADGE
-============================== */
+======================================== */
 
 .hero-status {
   width: fit-content;
   max-width: 100%;
-  margin-top: 22px;
+  margin-top: 23px;
   padding: 12px 18px;
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-
-  border: 1px solid #d8dce5;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.65);
 
   color: #374151;
   font-size: 11px;
   font-weight: 600;
+
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #d8dce5;
+  border-radius: 30px;
 
   box-sizing: border-box;
 }
@@ -150,90 +223,148 @@
   border-radius: 50%;
 }
 
-/* ==============================
-   PROFILE IMAGE AREA
-============================== */
+/* ========================================
+   RIGHT PROFILE IMAGE AREA
+======================================== */
 
 .hero-image-area {
+  position: relative;
   width: 100%;
   min-width: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  isolation: isolate;
 }
 
-/* Gradient circular border */
+/* ========================================
+   CIRCULAR PHOTO AND GRADIENT BORDER
+======================================== */
 
 .hero-photo {
-  width: 270px;
-  height: 270px;
+  position: relative;
+  z-index: 1;
+
+  width: 285px;
+  height: 285px;
   max-width: 100%;
-  padding: 4px;
+  aspect-ratio: 1;
 
+  padding: 3px;
   flex-shrink: 0;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   border-radius: 50%;
+  overflow: hidden;
 
   background: linear-gradient(
     135deg,
-    #a6efff,
-    #f2c9fa,
-    #c9d7ff
+    #a6efff 0%,
+    #d9c4ff 55%,
+    #f3c9f8 100%
   );
 
-  box-shadow: 0 8px 28px rgba(125, 125, 200, 0.18);
-
-  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(131, 126, 210, 0.18),
+    0 0 24px rgba(187, 202, 255, 0.15);
 }
 
-/* Inner image container */
+/* ========================================
+   PROFILE IMAGE
+======================================== */
 
-.photo-placeholder {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  background: #e9edf4;
-
-  box-sizing: border-box;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #78839a;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-/* Actual profile image */
-
-.photo-placeholder img {
+.profile-image {
   display: block;
 
   width: 100%;
   height: 100%;
 
-  position: absolute;
-  inset: 0;
-
+  box-sizing: border-box;
+  border: 3px solid #ffffff;
   border-radius: 50%;
+
   object-fit: cover;
   object-position: center 25%;
 }
 
-/* ==============================
+/* ========================================
+   DECORATIVE FLOATING STARS
+======================================== */
+
+.hero-star {
+  position: absolute;
+  z-index: 2;
+
+  color: #91dcff;
+  font-size: 14px;
+
+  pointer-events: none;
+  user-select: none;
+
+  animation: starFloat 3s ease-in-out infinite;
+}
+
+.star-one {
+  top: -35px;
+  left: 5%;
+}
+
+.star-two {
+  top: -15px;
+  right: 7%;
+  color: #ffe38a;
+  animation-delay: 0.5s;
+}
+
+.star-three {
+  top: 25%;
+  right: -10%;
+  color: #83baff;
+  animation-delay: 1s;
+}
+
+.star-four {
+  bottom: -22px;
+  left: 20%;
+  color: #f5b8e7;
+  animation-delay: 1.5s;
+}
+
+.star-five {
+  bottom: 17%;
+  left: -8%;
+  color: #ffe38a;
+  animation-delay: 0.8s;
+}
+
+.star-six {
+  top: 48%;
+  left: -12%;
+  color: #91dcff;
+  animation-delay: 1.2s;
+}
+
+@keyframes starFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* ========================================
    EXPLORE MORE
-============================== */
+======================================== */
 
 .explore-more {
   width: fit-content;
-  margin: 42px auto 0;
+  margin: 40px auto 0;
 
   display: flex;
   flex-direction: column;
@@ -251,49 +382,51 @@
 .explore-arrow {
   color: #4263eb;
   font-size: 28px;
-  transition: transform 0.2s ease;
+  line-height: 1.2;
+
+  transition: transform 0.25s ease;
 }
 
 .explore-more:hover .explore-arrow {
   transform: translateY(5px);
 }
 
-/* ==============================
-   TABLET RESPONSIVENESS
-============================== */
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 900px) {
   .hero {
-    padding-top: 90px;
+    padding-top: 95px;
   }
 
   .hero-container {
     max-width: 720px;
-    gap: 35px;
+    gap: 28px;
   }
 
   .hero-content h1 {
-    font-size: clamp(38px, 5vw, 52px);
+    font-size: clamp(40px, 5.5vw, 54px);
     letter-spacing: -1.5px;
   }
 
   .hero-content h2 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-description {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .hero-photo {
-    width: 230px;
-    height: 230px;
+    width: 235px;
+    height: 235px;
   }
 }
 
-/* ==============================
-   MOBILE RESPONSIVENESS
-============================== */
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 650px) {
   .hero {
@@ -301,17 +434,12 @@
     padding: 65px 24px 40px;
   }
 
-  .hero-greeting {
-    margin: 0 auto 28px;
-  }
-
   .hero-container {
-    max-width: 480px;
+    max-width: 460px;
+
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
   }
-
-  /* Display the photo above the introduction */
 
   .hero-image-area {
     order: 1;
@@ -322,33 +450,43 @@
     text-align: center;
   }
 
-  .hero-photo {
-    width: 200px;
-    height: 200px;
+  .hero-content .hero-greeting {
+    margin: 0 auto 22px;
   }
 
   .hero-content h1 {
-    font-size: clamp(38px, 9vw, 48px);
+    font-size: clamp(40px, 9vw, 49px);
     line-height: 1.15;
     letter-spacing: -1.5px;
   }
 
   .hero-content h2 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-location {
-    margin-bottom: 16px;
+    justify-content: center;
+    margin-bottom: 18px;
   }
 
   .hero-description {
     max-width: 100%;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.8;
+    text-align: left;
   }
 
   .hero-status {
     margin: 22px auto 0;
+  }
+
+  .hero-photo {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-star {
+    font-size: 12px;
   }
 
   .explore-more {
@@ -356,9 +494,9 @@
   }
 }
 
-/* ==============================
-   SMALL MOBILE SCREENS
-============================== */
+/* ========================================
+   SMALL MOBILE
+======================================== */
 
 @media (max-width: 380px) {
   .hero {
@@ -366,26 +504,24 @@
     padding-left: 18px;
   }
 
-  .hero-photo {
-    width: 175px;
-    height: 175px;
-  }
-
   .hero-content h1 {
     font-size: 36px;
   }
 
-  .hero-content h2 {
-    font-size: 16px;
+  .hero-photo {
+    width: 185px;
+    height: 185px;
   }
 }
 
-/* ==============================
-   REDUCED MOTION ACCESSIBILITY
-============================== */
+/* ========================================
+   ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .greeting-text {
+  .greeting-text,
+  .greeting-wave,
+  .hero-star {
     animation: none;
   }
 
