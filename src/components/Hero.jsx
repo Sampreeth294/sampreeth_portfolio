@@ -79,7 +79,7 @@ class Hero extends Component {
           <div className="hero-image-area">
             <div className="hero-photo">
               <div className="photo-placeholder">
-                <img src="/path/to/your/image.jpg" alt="Profile" />
+                <img src="public/public.png" alt="Profile" />
               </div>
             </div>
           </div>
