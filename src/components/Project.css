@@ -1,0 +1,162 @@
+
+.project-section {
+  min-height: 100vh;
+  padding: 100px 24px 80px;
+  background: linear-gradient(
+    135deg,
+    #f5f8ff 0%,
+    #ffffff 55%,
+    #f8f4ff 100%
+  );
+  color: #192033;
+}
+
+.projects-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.projects-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-heading h2 {
+  font-size: 32px;
+  font-weight: 750;
+  margin: 0;
+  letter-spacing: -0.8px;
+}
+
+.projects-heading h2 span {
+  color: #4b63ff;
+}
+
+.projects-underline {
+  width: 66px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #287bff, #7545ff);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 280px));
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  padding: 14px;
+  border: 1px solid #344cff;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 5px 12px rgba(25, 35, 70, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(65, 78, 255, 0.17);
+}
+
+.project-image {
+  width: 100%;
+  height: 145px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e5ef;
+  border-radius: 6px;
+  background: #f1f4ff;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.project-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+  border-radius: 7px;
+  color: #315dff;
+  background: #e0e9ff;
+  font-size: 20px;
+}
+
+.project-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+.project-description {
+  min-height: 62px;
+  margin: 0 0 14px;
+  color: #46516a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.project-tags span {
+  padding: 4px 9px;
+  border: 1px solid #e0e4eb;
+  border-radius: 20px;
+  background: #f4f6fa;
+  color: #344054;
+  font-size: 10px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2858ff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.project-link:hover {
+  color: #7845ff;
+}
+
+.project-link span {
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: minmax(0, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 75px 18px 50px;
+  }
+
+  .projects-heading h2 {
+    font-size: 27px;
+  }
+}
