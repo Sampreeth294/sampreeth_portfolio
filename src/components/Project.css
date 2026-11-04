@@ -1,5 +1,5 @@
 
-.project-section {
+.projects-section {
   min-height: 100vh;
   padding: 100px 24px 80px;
   background: linear-gradient(
@@ -43,11 +43,15 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 280px));
+  grid-auto-rows: 1fr;
   justify-content: center;
   gap: 20px;
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 14px;
   border: 1px solid #344cff;
   border-radius: 12px;
@@ -126,6 +130,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-top: auto;
   color: #2858ff;
   text-decoration: none;
   font-size: 11px;
