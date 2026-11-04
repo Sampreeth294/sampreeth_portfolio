@@ -50,8 +50,11 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  font-size: 12px;
-  font-weight: 700;
+}
+
+.github-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 .back-button:hover,
